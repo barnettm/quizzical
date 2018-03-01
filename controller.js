@@ -24,7 +24,7 @@ function Controller()
 
     this.setDBToken = function(){
         model.getDBToken(function(token){
-            console.log(`request result: ${token}`);
+            // console.log(`request result: ${token}`);
 
             if(token !== 'error'){
                 model.setDBToken(token);
@@ -78,10 +78,10 @@ function Controller()
             model.resetHintType();
             model.playSoundCorrect();
             view.setAnswerResult('correct', model.currentAnswer);
-            console.log('Player '+ (currentTurn+1) + ' got the question correct! Toggling next question modal!');
+            // console.log('Player '+ (currentTurn+1) + ' got the question correct! Toggling next question modal!');
 
             if(model.questionCount === model.getMaxQuestionCount() ){
-                console.log('Game has reached max questions!');
+                // console.log('Game has reached max questions!');
                 let pointScore = null;
 
                 if(model.playersInfo[0].points > model.playersInfo[1].points){
@@ -110,10 +110,10 @@ function Controller()
             model.resetHintType();
             model.playSoundWrong();
             view.setAnswerResult('wrong', model.currentAnswer);
-            console.log('Player '+ (currentTurn+1) + ' got the question wrong! Toggling next question modal!');
+            // console.log('Player '+ (currentTurn+1) + ' got the question wrong! Toggling next question modal!');
 
             if(model.questionCount ===  model.getMaxQuestionCount() ){
-                console.log('Game has reached max questions!');
+                // console.log('Game has reached max questions!');
                 let pointScore = null;
 
                 if(model.playersInfo[0].points > model.playersInfo[1].points){
@@ -183,7 +183,7 @@ function Controller()
                 }
 
                 model.questionCount++;
-                console.log('Current question count is: '+model.questionCount);
+                // console.log('Current question count is: '+model.questionCount);
 
                 var fixedIncorrectAnswers = [];
 

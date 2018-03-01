@@ -334,10 +334,11 @@ function Game(){
         }
         var questionObject = {category:catNum, difficulty: diff};
 
-        console.log("raw value: "+raw);
-        console.log("index value: "+number);
-        console.log("category number: "+catNum);
-        console.log("difficulty: "+diff);
+        //Use for debugging if necessary
+        // console.log("raw value: "+raw);
+        // console.log("index value: "+number);
+        // console.log("category number: "+catNum);
+        // console.log("difficulty: "+diff);
 
         self.clearQuestionDiffPanel();
 
