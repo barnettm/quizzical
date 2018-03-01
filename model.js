@@ -126,7 +126,7 @@ function Model() {
             dataType: 'json',
             method: 'Post',
             success: function(data){
-                console.log(`got data:`, data);
+                // console.log(`got data:`, data);  
 
                 if(data.response_code === 0){
                     callback(data.token);
@@ -149,7 +149,6 @@ function Model() {
      * returns an object to view
      */
     this.getTriviaQuestion = function (category, difficultyLevel, callback) {
-        console.log('this ran');
         let tokenURL = 'https://opentdb.com/api.php?amount=1&type=multiple'+'&token='+this.token;
 
         $.ajax({
@@ -167,8 +166,8 @@ function Model() {
                     return;
                 }
 
-                console.log('success', data);
-                console.log(data.results[0]);
+                // console.log('success', data);
+                // console.log(data.results[0]);
                 questionBank = data.results[0];
                 callback(questionBank);
             },
@@ -257,6 +256,7 @@ function Model() {
             success: function (data) {
                 console.log('Wiki text success', data);
                 var text = data.parse.text['*'];
+                debugger
                 callback({text:text, name: string.replace(/ /g,"_")} );
             },
             error: function (data) {
@@ -311,7 +311,6 @@ function Model() {
             success: function(data){
                 console.log('successfully started embed request!', data);
                 var embeddedHTMLCode = data.html;
-
                 callback(embeddedHTMLCode);
             },
             error: function(data){
